@@ -3,15 +3,20 @@ import { Route, Switch } from 'react-router-dom';
 
 import Layout from './hoc/Layout/Layout';
 
+import Movies from './containers/Movies/Movies';
+import Shows from './containers/Shows/Shows';
+
+import classes from './App.module.css';
+// import AllMedia from './containers/AllMedia/AllMedia';
+
 class App extends Component {
   render () {
     return (
-      <div>
+      <div className={classes.App}>
         <Layout>
           <Switch>
-            {/* <Route path='/checkout' component={Checkout}/> */}
-            {/* <Route path='/orders' component={Orders}/> */}
-            {/* <Route path='/' exact component={BurgerBuilder}/> */}
+            <Route path='/movies' component={Movies} />
+            <Route path='/tv-shows' component={Shows} />
           </Switch>
         </Layout>
       </div>

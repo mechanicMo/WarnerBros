@@ -1,9 +1,7 @@
-.Navbar {
-  height: 56px;
+.NavBar {
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
   top: 0; left: 0;
-  background-color: #703b09;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,12 +10,50 @@
   z-index: 90;
 }
 
-.Navbar nav {
+.NavBar nav {
   height: 100%;
+  margin-left: auto;
 }
 
-@media(max-width: 499px) {
-  .Navbar nav {
+.NavBar h1 {
+  width: 200px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 50px 0;
+}
+
+@media(max-width: 699px) {
+  .NavBar nav {
     display: none;
+  }
+
+  .SidebarIcon {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .SidebarIcon .Bar1, .Bar2, .Bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .SidebarIcon.Change .Bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+  }
+  
+  /* Fade out the second bar */
+  .SidebarIcon.Change .Bar2 {
+    opacity: 0;
+  }
+  
+  /* Rotate last bar */
+  .SidebarIcon.Change .Bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
   }
 }

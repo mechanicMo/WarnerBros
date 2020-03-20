@@ -1,24 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Aux from '../Aux/Aux';
-// import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
-// import Sidebar from '../../components/Navigation/Sidebar/Sidebar';
+import NavBar from '../../components/Navigation/NavBar/NavBar';
+import Sidebar from '../../components/Navigation/Sidebar/Sidebar';
 
 import classes from './Layout.module.css';
 
-const layout = (props) => {
+class Layout extends Component {
 
-  return (
-    <Aux>
-      {/* <Toolbar openSidebar={this.sideDrawerOpenedHandler} /> */}
-      {/* <Sidebar  */}
-        {/* isOpen={this.state.showSidebar}  */}
-        {/* closeSidebar={this.sideDrawerClosedHandler} /> */}
-      <main className={classes.Layout}>
-        {this.props.children}
-      </main>
-    </Aux>
-  )
+  state = {
+    showSidebar: false
+  }
+
+  sideDrawerClosedHandler = () => {
+    this.setState({showSidebar: false})
+  }
+
+  sideDrawerOpenedHandler = () => {
+    this.setState({showSidebar: true})
+  }
+
+  render() {
+    return (
+      <Aux>
+        <NavBar openSidebar={this.sideDrawerOpenedHandler} sideBarOpened={this.state.showSidebar}/>
+        <Sidebar 
+          isOpen={this.state.showSidebar} 
+          closeSidebar={this.sideDrawerClosedHandler} />
+        <main className={classes.Layout}>
+          {this.props.children}
+        </main>
+      </Aux>
+    )
+  }
 }
 
-export default layout;
+export default Layout;

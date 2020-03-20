@@ -1,0 +1,13 @@
+.MediaItem {
+  width: 250px;
+  /* height: 425px; */
+}
+
+.MediaItem img {
+  width: inherit;
+  height: 375px;
+}
+
+.MediaItem p {
+  text-transform: capitalize;
+}
