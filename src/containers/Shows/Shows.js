@@ -53,4 +53,4 @@ class Shows extends Component {
   }
 }
 
-export default Shows
+export default Shows;

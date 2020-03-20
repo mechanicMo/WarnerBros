@@ -9,7 +9,7 @@ const mediaitem = (props) => {
       <p style={{
         margin: '20px 0 15px'
          }} >
-          {props.type}
+          {props.type.includes('-') ? props.type.split('-').join(' & ') : props.type}
       </p>
       <p style={{
         marginBottom: '60px'

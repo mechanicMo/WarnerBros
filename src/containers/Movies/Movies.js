@@ -53,4 +53,4 @@ class Movies extends Component {
   }
 }
 
-export default Movies
+export default Movies;
