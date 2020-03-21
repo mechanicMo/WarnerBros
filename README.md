@@ -1,3 +1,31 @@
+Hello! Thanks for checking out my mock site for Warner Bros!
+
+
+What I have implemented:
+- simple search results
+- firebase database with mock data for movies, tv shows, games & apps
+- responsive
+- filter options for MOVIES page
+
+What I have NOT implemented:
+- data for blog, other
+- filter optiions for tv shows, games & apps, "all" page, etc.
+
+Please navigate into the root of the project directory and run the following the use the site
+
+### `npm install`
+### `npm start`
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+
+
+
+----- Everything below here is the default readme from `npx create-react-app` -----
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
