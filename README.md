@@ -10,6 +10,7 @@ What I have implemented / used:
 - bootstrap for the dropdown menus on movies page
 
 What I have NOT implemented:
+- a way to change how items are displayed (row vs grid)
 - data for blog, other
 - filter options for tv shows, games & apps, "all" page, etc.
 - the responsiveness is currently covering every use case (including the filter bar - try playing with it as much as possible and let me know if i missed anything) - but it's currently causing some lagginess if you do change the screen size frequently (not a likely user case, but something that I noticed in my testing). I have not addressed this in this version of the project
