@@ -58,6 +58,7 @@ class AllMedia extends Component {
 
     return (
       <div className={classes.AllMedia}>
+        {/* <FilterBar /> */}
         {allMedia} 
       </div>
     );

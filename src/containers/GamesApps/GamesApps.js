@@ -47,6 +47,7 @@ class GamesApps extends Component {
 
     return (
       <div className={classes.GamesApps}>
+        {/* <FilterBar /> */}
         {gamesapps} 
       </div>
     );

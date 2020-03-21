@@ -1,0 +1,15 @@
+.Dropdown {
+  margin: 0 10px;
+}
+
+.Dropdown p {
+  display: inline-block;
+}
+
+.Dropdown span {
+  display: none;
+}
+
+.Dropdown span.Active, .Dropdown .Dropped span {
+  display: block;
+}

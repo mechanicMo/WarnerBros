@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Overwrite Bootstrap arrow to match other arrows */
+.dropdown-toggle::after {
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+  top: -3px;
+  position: relative;
+  width: auto;
+  height: auto;
+  vertical-align: 0;
+  margin-left: 7.5px;
+}

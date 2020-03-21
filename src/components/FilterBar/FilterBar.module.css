@@ -1,0 +1,56 @@
+.FilterBar {
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  padding: 0 20px;
+  box-sizing: border-box;
+  justify-content: flex-end;
+  height: 50px;
+  z-index: 10;
+  background: white;
+  align-items: baseline;
+}
+
+.FilterBar span {
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.FilterBar span i {
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+  top: -3px;
+  position: relative;
+  margin-left: 3px;
+}
+
+.FilterOpen {
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  padding: 0 20px;
+  box-sizing: border-box;
+  height: 50px;
+  justify-content: flex-start;
+  transform: translateY(0);
+  transition: 0.3s ease-in-out;
+}
+
+.FilterClosed {
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  padding: 0 20px;
+  box-sizing: border-box;
+  height: 0;
+  justify-content: flex-start;
+  transform: translateY(-50px);
+  transition: 0.3s ease-in-out;
+}

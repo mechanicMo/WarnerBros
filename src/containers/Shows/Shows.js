@@ -47,6 +47,7 @@ class Shows extends Component {
 
     return (
       <div className={classes.Shows}>
+        {/* <FilterBar /> */}
         {shows} 
       </div>
     );
