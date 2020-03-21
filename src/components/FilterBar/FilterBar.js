@@ -18,17 +18,17 @@ const filterbar = (props) => {
       </div>
       <div className={props.filtering ? classes.FilterOpen : classes.FilterClosed}>
       <Dropdown 
-        changeFilters={props.changeFilters}
+        changeSortType={(event) => props.changeFilters(event, 'releaseYear')}
         sortType={props.releaseYear} 
         dropdownOptions={props.releaseYearOptions}
           > Release Year: </Dropdown>
       <Dropdown 
-        changeFilters={props.changeFilters}
+        changeSortType={(event) => props.changeFilters(event, 'genre')}
         sortType={props.genre}
         dropdownOptions={props.genreOptions}
           > Genre: </Dropdown>
       <Dropdown 
-        changeFilters={props.changeFilters}
+        changeSortType={(event) => props.changeFilters(event, 'rating')}
         sortType={props.rating}
         dropdownOptions={props.ratingOptions}
           > Rating: </Dropdown>

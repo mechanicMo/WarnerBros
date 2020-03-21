@@ -32,8 +32,10 @@ class Movies extends Component {
         let releaseOps = this.state.releaseYearOptions;
 
         for(let movie in res.data) {
-          let genres = res.data[movie].genre.split(', ')
-          genreOps.push(...genres)
+          // debugger
+          res.data[movie].genre = res.data[movie].genre.split(', ')
+          // debugger
+          genreOps.push(...res.data[movie].genre)
           ratingOps.push(res.data[movie].rating)
           releaseOps.push(res.data[movie]['release-year'])
         }
@@ -69,8 +71,10 @@ class Movies extends Component {
     }
   }
 
-  changeFilters = (event) => {
-    debugger
+  changeFilters = (event, filterType) => {
+    if(this.state[filterType] !== event.target.innerText) {
+      this.setState({[filterType]: event.target.innerText})
+    }
   }
 
   render() {
@@ -79,8 +83,7 @@ class Movies extends Component {
     if(!this.state.loading) {
       movies = []
       const allMovies = this.state.movies
-      for (let movie in allMovies) {
-        // debugger
+      for (let movie in allMovies) {        
         movies.push(
           <MediaItem 
             type='movies'
@@ -93,11 +96,54 @@ class Movies extends Component {
             releaseYear={allMovies[movie]['release-year']} />
         )
       }
-      // debugger
+
       if(this.state.sortType === 'Popularity') {
         movies.sort((a, b) => (a.props.score > b.props.score) ? -1 : 1)
       } else if(this.state.sortType === 'Alphabetically') {
         movies.sort((a, b) => (a.props['img-url'] > b.props['img-url']) ? -1 : 1)
+      }
+
+      if(this.state.rating !== 'ALL') {
+        let updatedMovies = []
+        movies.reduce((updatedMovies, currMovie) => {
+          if(currMovie.props.rating === this.state.rating) {
+            updatedMovies.push(currMovie)
+          }
+          return updatedMovies
+        }, updatedMovies)
+        movies = updatedMovies
+      }
+
+      if(this.state.genre !== 'ALL') {
+        let updatedMovies = []
+        movies.reduce((updatedMovies, currMovie) => {
+          // debugger
+          if(currMovie.props.genre.includes(this.state.genre)) {
+            updatedMovies.push(currMovie)
+          }
+          return updatedMovies
+        }, updatedMovies)
+        movies = updatedMovies
+      }
+
+      if(this.state.releaseYear !== 'ALL') {
+        let updatedMovies = []
+        movies.reduce((updatedMovies, currMovie) => {
+          // debugger
+          if(currMovie.props.releaseYear === +this.state.releaseYear) {
+            updatedMovies.push(currMovie)
+          }
+          return updatedMovies
+        }, updatedMovies)
+        movies = updatedMovies
+      }
+
+      if(movies.length === 0) {
+        movies = <h1 style={{
+          maxWidth: '500px',
+          textAlign: 'center',
+          marginTop: '35px',
+          fontSize: '32px' }} >No movies fit your filters! <br></br> Please change or clear your filters</h1>
       }
     }
 
@@ -114,7 +160,8 @@ class Movies extends Component {
           genre={this.state.genre}
           genreOptions={this.state.genreOptions}
           rating={this.state.rating}
-          ratingOptions={this.state.ratingOptions} />
+          ratingOptions={this.state.ratingOptions}
+          changeFilters={this.changeFilters} />
         {movies} 
       </div>
     );
