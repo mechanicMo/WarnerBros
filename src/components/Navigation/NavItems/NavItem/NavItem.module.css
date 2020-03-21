@@ -18,7 +18,7 @@
   color: #40a4c8;
 }
 
-@media(min-width: 700px) { /* desktop */
+@media(min-width: 720px) { /* desktop */
 
   .NavItem {
     margin: 0;

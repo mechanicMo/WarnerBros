@@ -6,7 +6,7 @@
   padding: 0 20px;
   box-sizing: border-box;
   justify-content: flex-end;
-  height: 50px;
+  height: 55px;
   z-index: 10;
   background: white;
   align-items: baseline;
@@ -36,10 +36,15 @@
   display: flex;
   padding: 0 20px;
   box-sizing: border-box;
-  height: 50px;
+  /* height: 50px; */
   justify-content: flex-start;
+  transform: translateX(0);
   transform: translateY(0);
   transition: 0.3s ease-in-out;
+
+  flex-direction: column;
+  align-items: flex-end;
+  height: 200px;
 }
 
 .FilterClosed {
@@ -51,6 +56,46 @@
   box-sizing: border-box;
   height: 0;
   justify-content: flex-start;
-  transform: translateY(-50px);
+  transform: translateX(100%);
   transition: 0.3s ease-in-out;
+
+  flex-direction: column;
+  align-items: flex-end;
+  /* height: 200px; */
+  opacity: 0;
+}
+
+.Clear {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-left: auto;
+  padding: 7.5px 15px;
+  font-size: 14px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.Clear:hover {
+  background-color: rgb(167, 161, 161);
+  color: white;
+  border: 1px solid white;
+}
+
+@media(min-width: 720px) {
+  .FilterOpen {
+    height: 50px;
+    justify-content: flex-start;
+    transform: translateY(0);
+    transform: translateX(0);
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .FilterClosed {
+    transform: translateY(-50px);
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
+    opacity: 0;
+  }
 }

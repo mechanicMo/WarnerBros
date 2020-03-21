@@ -32,6 +32,8 @@ const filterbar = (props) => {
         sortType={props.rating}
         dropdownOptions={props.ratingOptions}
           > Rating: </Dropdown>
+
+        <span onClick={props.clearFilters} className={classes.Clear} >CLEAR FILTERS</span>
       </div>
     </Aux>
   );

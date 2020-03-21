@@ -22,7 +22,7 @@
   margin: 50px 0;
 }
 
-@media(max-width: 699px) {
+@media(max-width: 719px) {
   .NavBar nav {
     display: none;
   }

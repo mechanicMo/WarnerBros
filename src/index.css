@@ -27,3 +27,11 @@ code {
   vertical-align: 0;
   margin-left: 7.5px;
 }
+
+button {
+  background-color: white !important;
+}
+
+button:focus {
+  box-shadow: none !important;
+}

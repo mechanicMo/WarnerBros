@@ -1,17 +1,23 @@
 Hello! Thanks for checking out my mock site for Warner Bros!
 
 
-What I have implemented:
+What I have implemented / used:
 - simple search results
 - firebase database with mock data for movies, tv shows, games & apps
-- responsive
+- axios to retrieve data
+- responsive down to width of 350px (iphone 6: 375px, galaxy s5: 360px)
 - filter options for MOVIES page
+- bootstrap for the dropdown menus on movies page
 
 What I have NOT implemented:
 - data for blog, other
 - filter optiions for tv shows, games & apps, "all" page, etc.
+- the responsiveness is currently covering every use case (including the filter bar - try playing with it as much as possible and let me know if i missed anything) - but it's currently causing some lagginess if you do change the screen size frequently (not a likely user case, but something that I noticed in my testing). I have not addressed this in this version of the project
 
-Please navigate into the root of the project directory and run the following the use the site
+
+To begin, clone or download this project...
+
+Then, please navigate into the root of the project directory and run the following to use the site
 
 ### `npm install`
 ### `npm start`

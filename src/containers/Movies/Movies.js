@@ -77,6 +77,15 @@ class Movies extends Component {
     }
   }
 
+  clearFilters = () => {
+    const filters = ['releaseYear', 'genre', 'rating']
+    const resetFilters = {}
+    filters.map((filter) => {
+      resetFilters[filter] = 'ALL'
+    })
+    this.setState(resetFilters)
+  }
+
   render() {
     let movies = <Spinner />
     
@@ -161,7 +170,8 @@ class Movies extends Component {
           genreOptions={this.state.genreOptions}
           rating={this.state.rating}
           ratingOptions={this.state.ratingOptions}
-          changeFilters={this.changeFilters} />
+          changeFilters={this.changeFilters}
+          clearFilters={this.clearFilters} />
         {movies} 
       </div>
     );
