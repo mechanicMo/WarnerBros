@@ -11,7 +11,7 @@ What I have implemented / used:
 
 What I have NOT implemented:
 - data for blog, other
-- filter optiions for tv shows, games & apps, "all" page, etc.
+- filter options for tv shows, games & apps, "all" page, etc.
 - the responsiveness is currently covering every use case (including the filter bar - try playing with it as much as possible and let me know if i missed anything) - but it's currently causing some lagginess if you do change the screen size frequently (not a likely user case, but something that I noticed in my testing). I have not addressed this in this version of the project
 
 
